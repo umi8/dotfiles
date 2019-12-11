@@ -1,3 +1,17 @@
+" ==================== "
+" Plugin "
+" ==================== "
+call plug#begin('~/.vim/plugged')
+" 分割したウィンドウのリサイズを容易に
+Plug 'simeji/winresizer'
+" %による移動を強化
+Plug 'andymass/vim-matchup'
+" StatusLineのカスタマイズ"
+Plug 'itchyny/lightline.vim'
+" fの移動を強化
+Plug 'unblevable/quick-scope'
+call plug#end()
+
 " encoding
 set encoding=utf8
 scriptencoding utf8
@@ -110,47 +124,6 @@ nnoremap sK <C-w>K
 nnoremap sJ <C-w>J
 " 画面リサイズ
 let g:winresizer_start_key = 'sr'
-
-" plugin manager ---------------------------------------------
-if &compatible
-  set nocompatible
-endif
-
-" プラグインがインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-
-" dein.vim本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-" tomlセット
-let s:toml_dir=expand('~/.dein/')
-let s:toml=s:toml_dir . 'dein.toml'
-let s:toml_lazy=s:toml_dir . 'dein-lazy.toml'
-
-" プラグインのロード
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  call dein#load_toml(s:toml)
-  call dein#load_toml(s:toml_lazy, {'lazy': 1})
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-" インストールしていないプラグインがあればインストールを実行
-if dein#check_install()
-  call dein#install()
-endif
-
-" ------------------------------------------------------------
 
 " lightline.vim
 let g:lightline = {
