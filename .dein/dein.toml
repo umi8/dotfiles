@@ -1,0 +1,11 @@
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'andymass/vim-matchup'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
