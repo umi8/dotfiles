@@ -7,6 +7,9 @@ call plug#begin('~/.vim/plugged')
 " ファイル操作の利便性向上
 Plug 'Shougo/unite.vim'
 
+" 視認性の高いディレクトリツリーの表示
+Plug 'scrooloose/nerdtree'
+
 " 分割したウィンドウのリサイズを容易に
 Plug 'simeji/winresizer'
 
@@ -34,13 +37,15 @@ set ambiwidth=double
 set nobomb
 set t_Co=256
 
-" file
+" ==================== "
+" file "
+" ==================== "
+" Leaderをスペースキーに設定
+let mapleader = "\<Space>"
 " スワップファイルの作成先を変更
 set noswapfile
 " ビープ音を消す
 set belloff=all
-
-" clipboard
 " ヤンクをクリップボードへ繋ぐ
 set clipboard+=unnamed
 
@@ -53,8 +58,6 @@ set number
 set relativenumber
 " 現在の行を強調表示
 set cursorline
-" 現在の行を強調表示（縦）
-"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -100,8 +103,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " キーバインド
 " jjでノーマルモードに戻る 
 inoremap <silent> jj <ESC>
-" 1 で行頭に移動
-nnoremap 1 ^
 " 括弧の補完
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
@@ -168,6 +169,12 @@ function! s:unite_my_settings()"{{{
     " ESCでuniteを終了
     nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction"}}}
+
+" ==================== "
+" NERDTREE "
+" ==================== "
+" LeaderとtキーでNERDTreeを開く
+nnoremap <silent> <Leader>t :NERDTreeFind<CR>:vertical res 30<CR>
 
 " ==================== "
 " lightline.vim "
