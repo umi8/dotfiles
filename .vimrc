@@ -2,6 +2,7 @@
 " Plugin "
 " ==================== "
 " If adding plugins, Reload .vimrc and :PlugInstall to install plugins.
+" If removing plugins, Reload .vimrc and :PlugClean to remove plugins.
 call plug#begin('~/.vim/plugged')
 
 " ファイル操作の利便性向上
@@ -10,14 +11,15 @@ Plug 'Shougo/unite.vim'
 " 視認性の高いディレクトリツリーの表示
 Plug 'scrooloose/nerdtree'
 
+" status/tablineの機能強化
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " 分割したウィンドウのリサイズを容易に
 Plug 'simeji/winresizer'
 
 " %による移動を強化
 Plug 'andymass/vim-matchup'
-
-" StatusLineのカスタマイズ"
-Plug 'itchyny/lightline.vim'
 
 " fの移動を強化
 Plug 'unblevable/quick-scope'
@@ -48,6 +50,12 @@ set noswapfile
 set belloff=all
 " ヤンクをクリップボードへ繋ぐ
 set clipboard+=unnamed
+" , キーで次タブのバッファを表示
+nnoremap <silent> , :bprev<CR>
+" . キーで前タブのバッファを表示
+nnoremap <silent> . :bnext<CR>
+" bdで現在のバッファを削除
+nnoremap bd :bd<CR>
 
 " 見た目系
 " タイトル系
@@ -177,8 +185,13 @@ endfunction"}}}
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>:vertical res 30<CR>
 
 " ==================== "
-" lightline.vim "
+" airline "
 " ==================== "
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+" テーマを設定
+let g:airline_theme = 'deus'
+" タブラインにもairlineを適用
+let g:airline#extensions#tabline#enabled = 1
+" タブに番号を表示
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+" タブに表示する名前（fnamemodifyの第二引数）
+let g:airline#extensions#tabline#fnamemod = ':t'
