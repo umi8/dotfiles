@@ -85,6 +85,8 @@ nnoremap k gk
 set whichwrap=h,l,<,>,[,]
 " シンタックスハイライトの有効化
 syntax enable
+set background=dark
+colorscheme solarized
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
