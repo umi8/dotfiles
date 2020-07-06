@@ -1,1 +1,1 @@
-export PATH=$PATH:/Users/hiromi/.nodebrew/current/bin
+export PATH=$PATH:~/.nodebrew/current/bin
