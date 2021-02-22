@@ -1,0 +1,36 @@
+source .vim/config/init/basic.vim
+source .vim/config/init/mapping.vim
+
+" ==================== "
+" アクションの検索方法 "
+" :actionlist       IdeaVim で呼び出し可能なアクションの一覧"
+" :actionlist XXX   名前にXXXを含むアクションを検索"
+" ==================== "
+
+nnoremap ,e :action SearchEverywhere<CR>
+nnoremap ,g :action FindInPath<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+
+nnoremap <C-CR> :action ShowIntentionActions<CR>
+
+nnoremap ,a :action GotoAction<CR>
+vnoremap ,a :action GotoAction<CR>
+
+nnoremap ,t :action ActivateTerminalToolWindow<CR>
+nnoremap ,d :action ActivateDatabaseToolWindow<CR>
+nnoremap ,m :action ActivateMavenToolWindow<CR>
+nnoremap ,o :action GotoFile<CR>
+nnoremap ,s :action FileStructurePopup<CR>
