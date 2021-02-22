@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -eu
+export AWS_PROFILE=default
+
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
+unset AWS_SESSION_TOKEN
+
+SESSION_TOKEN=""
+
+usage() {
+  echo "Usage: $0 [-t token-code]" 1>&2
+  exit 1
+}
+
+while getopts :t:h OPT
+do
+    case $OPT in
+        t)  SESSION_TOKEN=$OPTARG
+            ;;
+        h)  usage
+            ;;
+        \?) usage
+            ;;
+    esac
+done
+
+ARN_MFA=$(aws sts get-caller-identity | jq -r .Arn | sed "s/user/mfa/")
+echo "ARN: ${ARN_MFA}"
+
+CREDENTIALS=$(aws sts get-session-token --serial-number ${ARN_MFA} --token-code ${SESSION_TOKEN} | jq ".Credentials")
+
+aws --profile mfa configure set aws_access_key_id $(echo $CREDENTIALS | jq -r .AccessKeyId) 
+aws --profile mfa configure set aws_secret_access_key $(echo $CREDENTIALS | jq -r .SecretAccessKey)
+aws --profile mfa configure set aws_session_token $(echo $CREDENTIALS | jq -r .SessionToken)
+
+echo "export AWS_PROFILE=mfa"
