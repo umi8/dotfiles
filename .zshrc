@@ -2,6 +2,9 @@
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
+# Completion
+autoload -U compinit
+compinit
 
 # -----------------
 # aliases
@@ -15,13 +18,11 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
+
+# vim
 alias v='vim'
 alias vz='vim ~/.zshrc'
+
 alias ls='ls -AFG'
 alias ll='ls -hlt'
 
@@ -32,7 +33,22 @@ alias gs='git status'
 alias gct='git commit'
 alias gd='git diff'
 alias gl='git log'
+alias gb='git branch'
+alias gc='git checkout'
+
+alias sz='source ~/.zshrc'
 
 # Path to Intellij IDEA Command-line
 export PATH=/usr/local/bin/idea:$PATH
 
+# Path to Go bin
+export GOPATH=~/go
+export PATH=$GOPATH/bin:$PATH
+
+export PATH="$HOME/dotfiles/bin:$PATH"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/hiromi-furukawa/.sdkman"
+[[ -s "/Users/hiromi-furukawa/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/hiromi-furukawa/.sdkman/bin/sdkman-init.sh"
+eval "$(anyenv init -)"
