@@ -1,36 +1,62 @@
-source .vim/config/init/basic.vim
-source .vim/config/init/mapping.vim
+" ===========================================
+" .vimrcの設定の読み込み
+" ===========================================
+" 基本設定
+source ~/dotfiles/.vim/config/init/basic.vim
+" マッピング設定
+source ~/dotfiles/.vim/config/init/mapping.vim
 
-" ==================== "
-" アクションの検索方法 "
+" ===========================================
+" IntelliJ IDEAのアクションの設定
+"
+" アクションの検索方法
 " :actionlist       IdeaVim で呼び出し可能なアクションの一覧"
 " :actionlist XXX   名前にXXXを含むアクションを検索"
-" ==================== "
+" ===========================================
 
-nnoremap ,e :action SearchEverywhere<CR>
-nnoremap ,g :action FindInPath<CR>
-
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gs :action GotoSuperMethod<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gb :action JumpToLastChange<CR>
-
-nnoremap U :action FindUsages<CR>
-nnoremap R :action RenameElement<CR>
-
+" フォーマット
 nnoremap == :action ReformatCode<CR>
-vnoremap == :action ReformatCode<CR>
-
+" コメント
 nnoremap cc :action CommentByLineComment<CR>
-vnoremap cc :action CommentByLineComment<CR>
+" 戻る
+nnoremap <C-h> :action Back<CR>
+" 進む
+nnoremap <C-l> :action Forward<CR>
 
-nnoremap <C-CR> :action ShowIntentionActions<CR>
+" テスト
+nnoremap <Leader>r :action RunClass<CR>
+" デバッグ
+nnoremap <Leader>d :action DebugClass<CR>
+" 現在行をブレークポイントに指定/解除
+nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
+" 使用箇所を検索
+nnoremap <Leader>u :action FindUsages<CR>
+" アウトラインを表示
+nnoremap <Leader>o :action FileStructurePopup<CR>
+" ファイルを検索
+nnoremap <Leader>f :action GotoFile<CR>
+" ファイルを全文検索
+nnoremap <Leader><Leader>f :action FindInPath<CR>
 
-nnoremap ,a :action GotoAction<CR>
-vnoremap ,a :action GotoAction<CR>
+" 実装に移動
+nnoremap gji :action GotoImplementation<CR>
+" 宣言に移動
+nnoremap gjd :action GotoDeclaration<CR>
+" テストに移動
+nnoremap gjt :action GotoTest<CR>
+" スーパークラスに移動
+nnoremap gjs :action GotoSuperMethod<CR>
 
-nnoremap ,t :action ActivateTerminalToolWindow<CR>
-nnoremap ,d :action ActivateDatabaseToolWindow<CR>
-nnoremap ,m :action ActivateMavenToolWindow<CR>
-nnoremap ,o :action GotoFile<CR>
-nnoremap ,s :action FileStructurePopup<CR>
+" 階層ツールウィンドウを開く
+nnoremap <Leader><Leader>h :action CallHierarchy<CR>
+" ターミナルを開く
+nnoremap <Leader><Leader>t :action ActivateTerminalToolWindow<CR>
+" データベースツールウィンドウを開く
+nnoremap <Leader><Leader>d :action ActivateDatabaseToolWindow<CR>
+" Mavenツールウィンドウを開く
+nnoremap <Leader><Leader>m :action ActivateMavenToolWindow<CR>
+
+" =========================================
+" IdeaVim-EasyMotion
+" ===========================================
+"set easymotion
