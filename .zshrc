@@ -1,14 +1,20 @@
+# -----------------
+# prompt
+# -----------------
+
 # Enable colors
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
+# -----------------
 # Completion
+# -----------------
 autoload -U compinit
 compinit
 
 # -----------------
 # aliases
-# ----------------
+# -----------------
 
 # Navigation
 alias ..='cd ..'
@@ -38,6 +44,10 @@ alias gc='git checkout'
 alias gf='git fetch'
 
 alias sz='source ~/.zshrc'
+
+# -----------------
+# path
+# -----------------
 
 # Path to Intellij IDEA Command-line
 export PATH=/usr/local/bin/idea:$PATH
