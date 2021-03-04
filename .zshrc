@@ -35,6 +35,7 @@ alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gc='git checkout'
+alias gf='git fetch'
 
 alias sz='source ~/.zshrc'
 
