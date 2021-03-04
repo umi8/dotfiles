@@ -98,6 +98,8 @@ alias vz='vim ~/.zshrc'
 alias ls='ls -AFG'
 alias ll='ls -hlt'
 
+alias cl='clear'
+
 # git
 alias g='git'
 alias ga='git add '''
