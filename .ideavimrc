@@ -37,6 +37,8 @@ nnoremap <Leader>o :action FileStructurePopup<CR>
 nnoremap <Leader>f :action GotoFile<CR>
 " ファイルを全文検索
 nnoremap <Leader><Leader>f :action FindInPath<CR>
+" デバッガをプロセスにアタッチ
+nnoremap <Leader>a :action XDebugger.AttachToProcess<CR>
 
 " 実装に移動
 nnoremap gji :action GotoImplementation<CR>
