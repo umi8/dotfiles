@@ -30,6 +30,8 @@ set whichwrap=h,l,<,>,[,]
 " シンタックスハイライトの有効化
 syntax enable
 set background=dark
+" 現在のモードを表示
+set showmode
 
 " ============================================
 " 検索系
