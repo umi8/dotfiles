@@ -65,4 +65,5 @@ nnoremap <Leader><Leader>m :action ActivateMavenToolWindow<CR>
 " =========================================
 " IdeaVim-EasyMotion
 " ===========================================
-"set easymotion
+set easymotion
+nmap s <Plug>(easymotion-s2)
