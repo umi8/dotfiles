@@ -39,6 +39,10 @@ nnoremap <Leader>f :action GotoFile<CR>
 nnoremap <Leader><Leader>f :action FindInPath<CR>
 " デバッガをプロセスにアタッチ
 nnoremap <Leader>a :action XDebugger.AttachToProcess<CR>
+" 垂直方向に分割
+nnoremap <Leader>sv :action SplitVertically<CR>
+" 水平方向に分割
+nnoremap <Leader>sh :action SplitHorizontally<CR>
 
 " 実装に移動
 nnoremap gji :action GotoImplementation<CR>
