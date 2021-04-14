@@ -27,7 +27,7 @@ PROMPT=`left-prompt`
 # git ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
-  
+
   branch='\ue0a0'
   color='%{\e[38;5;' #  文字色を設定
   green='114m%}'
@@ -35,7 +35,7 @@ function rprompt-git-current-branch {
   yellow='227m%}'
   blue='033m%}'
   reset='%{\e[0m%}'   # reset
-  
+
   if [ ! -e  ".git" ]; then
     # git 管理されていないディレクトリは何も返さない
     return
@@ -65,10 +65,10 @@ function rprompt-git-current-branch {
   # ブランチ名を色付きで表示する
   echo "${branch_status}$branch_name${reset}"
 }
- 
+
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
- 
+
 # プロンプトの右側にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
 
@@ -112,6 +112,15 @@ alias gc='git checkout'
 alias gf='git fetch'
 
 alias sz='source ~/.zshrc'
+
+# -----------------
+# anyenv
+# -----------------
+
+eval "$(anyenv init -)"
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded)
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+#eval "$(rbenv init -)"
 
 # -----------------
 # path
