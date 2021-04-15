@@ -51,3 +51,8 @@ echo "link to .vimrc"
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 echo "link to .ideavimrc"
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+
+# ======================
+# PATH
+# ======================
+export PATH=$HOME/dotfiles/bin:$PATH
