@@ -22,7 +22,8 @@ which brew >/dev/null 2>&1 && brew bundle --file preferences/homebrew/Brewfile
 # ======================
 # Karabiner-Elements
 # ======================
-cp -p preferences/karabiner/karabiner.json ~/.config/karabiner/
+mkdir ~/.config/karabiner
+ln -sf ~/dotfiles/preferences/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 
 # ======================
 # font
