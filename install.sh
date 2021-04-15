@@ -63,3 +63,8 @@ export PATH=$HOME/dotfiles/bin:$PATH
 # ======================
 chmod 755 /usr/local/share/zsh/site-functions
 chmod 755 /usr/local/share/zsh
+
+# ======================
+# anyenv
+# ======================
+anyenv install --init
