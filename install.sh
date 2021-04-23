@@ -68,3 +68,11 @@ chmod 755 /usr/local/share/zsh
 # anyenv
 # ======================
 anyenv install --init
+
+# ======================
+# vim
+# ======================
+echo "Install plug.vim"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
