@@ -41,19 +41,6 @@ cd ..
 rm -rf fonts
 
 # ======================
-# link
-# ======================
-
-echo "create symbolic link"
-
-echo "link to .zshrc"
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-echo "link to .vimrc"
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-echo "link to .ideavimrc"
-ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
-
-# ======================
 # PATH
 # ======================
 export PATH=$HOME/dotfiles/bin:$PATH
@@ -76,3 +63,15 @@ echo "Install plug.vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# ======================
+# link
+# ======================
+
+echo "create symbolic link"
+
+echo "link to .zshrc"
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+echo "link to .vimrc"
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+echo "link to .ideavimrc"
+ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
