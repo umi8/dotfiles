@@ -16,9 +16,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" 分割したウィンドウのリサイズを容易に
-Plug 'simeji/winresizer'
-
 " %による移動を強化
 Plug 'andymass/vim-matchup'
 
