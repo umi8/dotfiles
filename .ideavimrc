@@ -34,9 +34,9 @@ nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>u :action FindUsages<CR>
 " アウトラインを表示
 nnoremap <Leader>o :action FileStructurePopup<CR>
-" ファイルを検索
+" ファイルを検索（cmd + shift + o）
 nnoremap <Leader>f :action GotoFile<CR>
-" ファイルを全文検索
+" ファイルを全文検索（cmd + shift + f）
 nnoremap <Leader><Leader>f :action FindInPath<CR>
 " デバッガをプロセスにアタッチ
 nnoremap <Leader>a :action XDebugger.AttachToProcess<CR>
