@@ -57,8 +57,6 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool tr
 defaults write NSGlobalDomain KeyRepeat -int 2
 # 「リピート入力認識までの時間」を最速にする
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
-# 「Spotlight検索を表示」のショートカットを「⌘⇧スペース」に変更する
-# 手動
 
 # ======================
 # トラックパッド
@@ -87,14 +85,6 @@ defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" Dragging -in
 # 「3本指のドラッグ」に変更する
 defaults write "com.apple.AppleMultitouchTrackpad" TrackpadThreeFingerDrag -int 1
 defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThreeFingerDrag -int 1
-
-# ======================
-# Night Shift
-# ======================
-
-# 「スケジュール」をカスタムに変更する
-# 開始時刻を「3:00」、終了時刻を「2:59」にする
-# 手動
 
 # ======================
 # サウンド
