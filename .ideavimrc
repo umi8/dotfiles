@@ -26,7 +26,8 @@ nnoremap <C-l> :action Forward<CR>
 " テスト
 nnoremap <Leader>r :action RunClass<CR>
 " デバッグ
-nnoremap <Leader>d :action DebugClass<CR>
+nnoremap <Leader>d :action Debug<CR>
+" nnoremap <Leader><Leader>d :action DebugClass<CR>
 " 現在行をブレークポイントに指定/解除
 nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
 " 使用箇所を検索
