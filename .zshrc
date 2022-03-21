@@ -137,6 +137,10 @@ export PATH=$GOPATH/bin:$PATH
 
 # Path to nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Path to Glassfish
+export GLASSFISH_HOME=/usr/local/opt/glassfish/libexec
+
 export PATH="$HOME/dotfiles/bin:$PATH"
 
 
