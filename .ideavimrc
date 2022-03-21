@@ -18,10 +18,6 @@ source ~/dotfiles/.vim/config/init/mapping.vim
 nnoremap == :action ReformatCode<CR>
 " コメント
 nnoremap cc :action CommentByLineComment<CR>
-" 戻る
-nnoremap <C-h> :action Back<CR>
-" 進む
-nnoremap <C-l> :action Forward<CR>
 
 " テスト
 nnoremap <Leader>r :action RunClass<CR>
