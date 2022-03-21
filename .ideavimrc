@@ -34,6 +34,8 @@ nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <Leader>u :action FindUsages<CR>
 " アウトラインを表示
 nnoremap <Leader>o :action FileStructurePopup<CR>
+" Select file in Project View
+nnoremap <Leader><Leader>p :action SelectInProjectView<CR>
 " ファイルを検索（cmd + shift + o）
 nnoremap <Leader>f :action GotoFile<CR>
 " ファイルを全文検索（cmd + shift + f）
