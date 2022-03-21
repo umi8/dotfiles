@@ -135,6 +135,8 @@ export PATH=/usr/local/bin/idea:$PATH
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
 
+# Path to nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/dotfiles/bin:$PATH"
 
 
