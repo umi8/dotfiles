@@ -45,4 +45,4 @@ set hlsearch
 " 検索するときに大文字小文字を区別しない
 set ignorecase
 " ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
