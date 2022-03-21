@@ -2,6 +2,9 @@
 # prompt
 # -----------------
 
+# -----------------
+# prompt
+# -----------------
 # Enable colors
 autoload -U colors && colors
 
