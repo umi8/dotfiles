@@ -55,6 +55,7 @@ setopt auto_param_keys       # カッコの対応などを自動的に補完
 setopt magic_equal_subst     # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 setopt complete_in_word      # 語の途中でもカーソル位置で補完
 setopt extended_glob         # 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
+
 # -----------------
 # aliases
 # -----------------
@@ -73,8 +74,6 @@ alias g='git'
 alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
-
-alias sz='source ~/.zshrc'
 
 # -----------------
 # anyenv
