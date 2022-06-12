@@ -61,12 +61,6 @@ setopt extended_glob         # 拡張グロブで補完(~とか^とか。例え�
 
 # Navigation
 alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-alias ~='cd ~'
-alias -- -='cd -'
 
 # vim
 alias v='vim'
