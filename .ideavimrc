@@ -14,16 +14,17 @@ source ~/dotfiles/.vim/config/init/mapping.vim
 " :actionlist XXX   名前にXXXを含むアクションを検索"
 " ===========================================
 
-" フォーマット
-nnoremap == :action ReformatCode<CR>
-" コメント
-nnoremap cc :action CommentByLineComment<CR>
+" Open .ideavimrc
+nnoremap \e :e ~/.ideavimrc<CR>
+" Reload .ideavimrc
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 " テスト
 nnoremap <Leader>r :action RunClass<CR>
 " デバッグ
 nnoremap <Leader>d :action Debug<CR>
-" nnoremap <Leader><Leader>d :action DebugClass<CR>
+" Stop
+nnoremap <Leader><Leader>s :action Stop<CR>
 " 現在行をブレークポイントに指定/解除
 nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
 " 使用箇所を検索
@@ -49,7 +50,7 @@ nnoremap gji :action GotoImplementation<CR>
 nnoremap gjd :action GotoDeclaration<CR>
 " テストに移動
 nnoremap gjt :action GotoTest<CR>
-" スーパークラスに移動
+" スーパーメソッドに移動
 nnoremap gjs :action GotoSuperMethod<CR>
 
 " 階層ツールウィンドウを開く
