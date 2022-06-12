@@ -73,13 +73,8 @@ alias cl='clear'
 
 # git
 alias g='git'
-alias ga='git add '''
 alias gs='git status'
-alias gct='git commit'
-alias gd='git diff'
-alias gl='git log'
 alias gb='git branch'
-alias gc='git checkout'
 alias gf='git fetch'
 
 alias sz='source ~/.zshrc'
