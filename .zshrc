@@ -68,6 +68,7 @@ alias vz='vim ~/.zshrc'
 
 alias ls='lsd'
 alias ll='ls -ltra'
+alias cat='bat'
 
 # git
 alias g='git'
