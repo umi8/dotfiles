@@ -1,7 +1,6 @@
 # ======================
 # Dock
 # ======================
-
 # 「自動的に非表示」をオンにする
 defaults write com.apple.dock autohide -bool true
 # Dockの位置を左に移動する
@@ -28,7 +27,6 @@ defaults write "com.apple.menuextra.clock" Show24Hour -bool true
 defaults write "com.apple.menuextra.clock" ShowSeconds -bool true
 defaults write "com.apple.menuextra.clock" DateFormat -string "M\\U6708d\\U65e5(EEE)  H:mm:ss"
 
-# 「最新の使用状況に基づいて操作スペースを自動的に並べ替える」のチェックを外す
 # ======================
 # Mission Control
 # ======================
@@ -40,6 +38,8 @@ defaults write com.apple.dock mru-spaces -bool false
 # ======================
 # 「メニューバーにSiriを表示」のチェックを外す
 defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -bool false
+# 「"Siriに頼む"を有効にする」のチェックを外す
+defaults write com.apple.assistant.support "Assistant Enabled" 0
 
 # ======================
 # Bluetooth
@@ -47,12 +47,9 @@ defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -bool false
 # 「メニューバーにBluetoothを表示」のチェックを入れる
 defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
 
-# VPN
-
 # ======================
 # キーボード
 # ======================
-
 # 「キーのリピート」を最速にする
 defaults write NSGlobalDomain KeyRepeat -int 2
 # 「リピート入力認識までの時間」を最速にする
@@ -61,7 +58,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # ======================
 # トラックパッド
 # ======================
-
 # 「調べる＆データ検出」のチェックをオフにする
 defaults write -g "com.apple.trackpad.forceClick" -bool false
 # 「軌跡の速さ」を7にする
@@ -78,7 +74,6 @@ defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThre
 # ======================
 # アクセシビリティ（トラックパッドオプション）
 # ======================
-
 # 「ドラッグを有効にする」にチェックを入れる（もしかしたら0にすべきかも）
 defaults write "com.apple.AppleMultitouchTrackpad" Dragging -int 1
 defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" Dragging -int 1
@@ -89,9 +84,15 @@ defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThre
 # ======================
 # サウンド
 # ======================
-
 # 「メニューバーに音量を表示」をONにする
-defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" 1
+
+# ======================
+# ネットワーク
+# ======================
+# 「メニューバーにVPNの状況を表示」をONにする
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.vpn" 1
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/VPN.menu"
 
 # ======================
 # Finder
