@@ -59,13 +59,11 @@ setopt extended_glob         # 拡張グロブで補完(~とか^とか。例え�
 # aliases
 # -----------------
 
-# Navigation
-alias ..='cd ..'
-
-# vim
 alias v='vim'
 alias vz='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
 
+alias ..='cd ..'
 alias ls='lsd'
 alias ll='ls -ltra'
 alias cat='bat'
