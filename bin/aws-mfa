@@ -20,8 +20,8 @@ do
     case $OPT in
         t)  SESSION_TOKEN=$OPTARG
             ;;
-	p)  PROFILE=$OPTARG
-	    ;;
+        p)  PROFILE=$OPTARG
+            ;;
         h)  usage
             ;;
         \?) usage
@@ -34,7 +34,7 @@ echo "ARN: ${ARN_MFA}"
 
 CREDENTIALS=$(aws sts get-session-token --profile=${PROFILE} --serial-number ${ARN_MFA} --token-code ${SESSION_TOKEN} | jq ".Credentials")
 
-aws --profile mfa configure set aws_access_key_id $(echo $CREDENTIALS | jq -r .AccessKeyId) 
+aws --profile mfa configure set aws_access_key_id $(echo $CREDENTIALS | jq -r .AccessKeyId)
 aws --profile mfa configure set aws_secret_access_key $(echo $CREDENTIALS | jq -r .SecretAccessKey)
 aws --profile mfa configure set aws_session_token $(echo $CREDENTIALS | jq -r .SessionToken)
 
