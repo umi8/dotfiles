@@ -66,8 +66,8 @@ alias ..='cd ..'
 alias v='vim'
 alias vz='vim ~/.zshrc'
 
-alias ls='ls -AFG'
-alias ll='ls -hlt'
+alias ls='lsd'
+alias ll='ls -ltr'
 
 alias cl='clear'
 
