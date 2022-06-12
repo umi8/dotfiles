@@ -69,8 +69,6 @@ alias vz='vim ~/.zshrc'
 alias ls='lsd'
 alias ll='ls -ltra'
 
-alias cl='clear'
-
 # git
 alias g='git'
 alias gs='git status'
