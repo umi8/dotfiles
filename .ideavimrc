@@ -25,8 +25,12 @@ nnoremap <Leader>r :action RunClass<CR>
 nnoremap <Leader>d :action Debug<CR>
 " Stop
 nnoremap <Leader><Leader>s :action Stop<CR>
+
 " 現在行をブレークポイントに指定/解除
 nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
+" デバッガをプロセスにアタッチ
+nnoremap <Leader>a :action XDebugger.AttachToProcess<CR>
+
 " 使用箇所を検索
 nnoremap <Leader>u :action FindUsages<CR>
 " アウトラインを表示
@@ -37,12 +41,16 @@ nnoremap <Leader><Leader>p :action SelectInProjectView<CR>
 nnoremap <Leader>f :action GotoFile<CR>
 " ファイルを全文検索（cmd + shift + f）
 nnoremap <Leader><Leader>f :action FindInPath<CR>
-" デバッガをプロセスにアタッチ
-nnoremap <Leader>a :action XDebugger.AttachToProcess<CR>
+" 階層ツールウィンドウを開く
+nnoremap <Leader><Leader>h :action CallHierarchy<CR>
+
 " 垂直方向に分割
 nnoremap <Leader>sv :action SplitVertically<CR>
 " 水平方向に分割
 nnoremap <Leader>sh :action SplitHorizontally<CR>
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
 
 " 実装に移動
 nnoremap gji :action GotoImplementation<CR>
@@ -53,14 +61,9 @@ nnoremap gjt :action GotoTest<CR>
 " スーパーメソッドに移動
 nnoremap gjs :action GotoSuperMethod<CR>
 
-" 階層ツールウィンドウを開く
-nnoremap <Leader><Leader>h :action CallHierarchy<CR>
-" ターミナルを開く
-nnoremap <Leader><Leader>t :action ActivateTerminalToolWindow<CR>
-" データベースツールウィンドウを開く
-nnoremap <Leader><Leader>d :action ActivateDatabaseToolWindow<CR>
-" Mavenツールウィンドウを開く
-nnoremap <Leader><Leader>m :action ActivateMavenToolWindow<CR>
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+" Open a new terminal directly in the parent folder of the current file in the editor
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 " =========================================
 " IdeaVim-EasyMotion
