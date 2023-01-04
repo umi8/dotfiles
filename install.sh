@@ -70,8 +70,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 echo "create symbolic link"
 
 echo "link to .zshrc"
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -nsf ~/dotfiles/zsh/.zshrc ~/.zshrc
 echo "link to .vimrc"
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -nsf ~/dotfiles/.vimrc ~/.vimrc
 echo "link to .ideavimrc"
-ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+ln -nsf ~/dotfiles/.ideavimrc ~/.ideavimrc
