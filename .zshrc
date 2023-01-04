@@ -17,7 +17,7 @@ if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
   zplug "chrissicool/zsh-256color"
   zplug "b4b4r07/enhancd", use:init.sh
   zplug "romkatv/powerlevel10k", as:theme, depth:1
-   
+
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
       printf "Install? [y/N]: "
@@ -25,7 +25,7 @@ if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
           echo; zplug install
       fi
   fi
-  
+
   # Then, source plugins and add commands to $PATH
   zplug load
 
