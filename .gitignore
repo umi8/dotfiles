@@ -1,3 +1,6 @@
 .vim/colors
 preferences/homebrew/Brewfile.lock.json
 preferences/mac/*.txt
+
+# Local machine only configuration
+zsh/.zshrc.secret
