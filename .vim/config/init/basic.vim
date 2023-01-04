@@ -46,3 +46,12 @@ set hlsearch
 set ignorecase
 " ESC連打でハイライト解除
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" ============================================
+" タブ系
+" ============================================
+" タブをスペース4文字分にする
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
