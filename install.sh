@@ -71,6 +71,8 @@ echo "create symbolic link"
 
 echo "link to .zshrc"
 ln -nsf ~/dotfiles/zsh/.zshrc ~/.zshrc
+echo "link to sheldon config"
+mkdir -p ~/.config/sheldon && ln -nsf ~/dotfiles/zsh/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 echo "link to .vimrc"
 ln -nsf ~/dotfiles/.vimrc ~/.vimrc
 echo "link to .ideavimrc"
