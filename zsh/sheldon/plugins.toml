@@ -28,7 +28,7 @@ apply = ['defer']
 
 [plugins.powerlevel10k]
 github = 'romkatv/powerlevel10k'
-apply = ['defer']
+apply = ['source']
 
 [plugins.aws_zsh_completer]
 remote = "https://raw.githubusercontent.com/aws/aws-cli/v2/bin/aws_zsh_completer.sh"
