@@ -13,3 +13,6 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+
+" 「変更」オペレータの場合はヤンクせずブラックホールレジスタを使う
+nnoremap c "_c
