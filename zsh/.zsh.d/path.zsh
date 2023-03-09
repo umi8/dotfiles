@@ -12,6 +12,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GLASSFISH_HOME=/usr/local/opt/glassfish/libexec
 
 export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH="$HOME/dotfiles/bin/.secret:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
