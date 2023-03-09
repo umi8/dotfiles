@@ -5,3 +5,4 @@ preferences/mac/*.txt
 
 # Local machine only configuration
 zsh/.zshrc.secret
+bin/.secret
