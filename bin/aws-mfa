@@ -38,4 +38,5 @@ aws --profile mfa configure set aws_access_key_id $(echo $CREDENTIALS | jq -r .A
 aws --profile mfa configure set aws_secret_access_key $(echo $CREDENTIALS | jq -r .SecretAccessKey)
 aws --profile mfa configure set aws_session_token $(echo $CREDENTIALS | jq -r .SessionToken)
 
+echo "export AWS_PROFILE=mfa" | pbcopy
 echo "export AWS_PROFILE=mfa"
