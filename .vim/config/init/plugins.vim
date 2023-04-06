@@ -22,4 +22,7 @@ Plug 'andymass/vim-matchup'
 " fの移動を強化
 Plug 'unblevable/quick-scope'
 
+" 囲む操作を楽にする
+Plug 'tpope/vim-surround'
+
 call plug#end()
