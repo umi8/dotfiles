@@ -70,3 +70,5 @@ nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 " ===========================================
 set easymotion
 nmap s <Plug>(easymotion-s2)
+
+set surround
