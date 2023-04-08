@@ -1,7 +1,7 @@
 # ======================
 # Command Line Tools
 # ======================
-echo "install COmmand Line Tools for Xcode"
+echo "install Command Line Tools for Xcode"
 xcode-select --install
 
 # ======================
@@ -13,7 +13,7 @@ which brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubu
 echo "run brew doctor"
 which brew >/dev/null 2>&1 && brew doctor
 
-echo "run brwe update"
+echo "run brew update"
 which brew >/dev/null 2>&1 && brew update --verbose
 
 echo "run brew bundle"
@@ -50,6 +50,7 @@ export PATH=$HOME/dotfiles/bin:$PATH
 # ======================
 chmod 755 /usr/local/share/zsh/site-functions
 chmod 755 /usr/local/share/zsh
+chmod 755 /usr/local/share
 
 # ======================
 # anyenv
