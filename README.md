@@ -13,5 +13,8 @@
 ## Installation
 
 ```sh
-git clone https://github.com/umi8/dotfiles.git && cd dotfiles && source install.sh
+cd ~ && \
+git clone https://github.com/umi8/dotfiles.git && \
+cd dotfiles && \
+source install.sh
 ```
