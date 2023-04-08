@@ -54,6 +54,8 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool tr
 defaults write NSGlobalDomain KeyRepeat -int 2
 # 「リピート入力認識までの時間」を最速にする
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# キーの長押しで連続入力できるようにする
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # ======================
 # トラックパッド
@@ -74,12 +76,12 @@ defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThre
 # ======================
 # アクセシビリティ（トラックパッドオプション）
 # ======================
-# 「ドラッグを有効にする」にチェックを入れる（もしかしたら0にすべきかも）
-defaults write "com.apple.AppleMultitouchTrackpad" Dragging -int 1
-defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" Dragging -int 1
+# 「ドラッグを有効にする」にチェックを入れる
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" Dragging -bool true
+defaults write "com.apple.AppleMultitouchTrackpad" Dragging -bool true
 # 「3本指のドラッグ」に変更する
-defaults write "com.apple.AppleMultitouchTrackpad" TrackpadThreeFingerDrag -int 1
-defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThreeFingerDrag -int 1
+defaults write "com.apple.driver.AppleBluetoothMultitouch.trackpad" TrackpadThreeFingerDrag -bool true
+defaults write "com.apple.AppleMultitouchTrackpad" TrackpadThreeFingerDrag -bool true
 
 # ======================
 # サウンド
@@ -103,23 +105,35 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 # タブバーを表示
 defaults write com.apple.finder ShowTabView -bool true
-# 不可視ファイルを表示
+# 隠しファイルを表示
 defaults write com.apple.finder AppleShowAllFiles YES
-# 「新規Finderウィンドウで次を表示」をユーザーフォルダにする
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
-# ライブラリディレクトリを表示
-chflags nohidden ~/Library
-# リストビューをデフォルトにする
-defaults write com.apple.Finder FXPreferredViewStyle -string "Nlsv"
-# タイトルバーに現在の位置をフルパスで表示する
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-# 「タグ」のチェックを外す
 # 「すべてのファイル名拡張子を表示」にチェックを入れる
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# 「新規Finderウィンドウで次を表示」をユーザーフォルダにする
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+defaults write com.apple.finder NewWindowTarget PfHm
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+# ホームディレクトリ内のLibraryディレクトリを非表示から表示に変更する
+chflags nohidden ~/Library
+# リストビューをデフォルトにする
+# Icon View   : `icnv`
+# List View   : `Nlsv`
+# Column View : `clmv`
+# Cover Flow  : `Flwv`
+defaults write com.apple.Finder FXPreferredViewStyle -string Nlsv
+# タイトルバーに現在の位置をフルパスで表示する
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# タグを非表示にする
+defaults write com.apple.finder ShowRecentTags -bool false
 
 # ======================
-# 設定の反映
+# 設定の反映（設定情報のキャッシュのクリア）
 # ======================
 killall Finder
 killall Dock
