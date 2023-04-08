@@ -13,6 +13,7 @@ export GLASSFISH_HOME=/usr/local/opt/glassfish/libexec
 
 export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="$HOME/dotfiles/bin/.secret:$PATH"
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
