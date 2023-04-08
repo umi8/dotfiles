@@ -56,6 +56,10 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # キーの長押しで連続入力できるようにする
 defaults write -g ApplePressAndHoldEnabled -bool false
+# ショートカット > 入力ソースの「前の入力ソースを選択」のチェックを外す
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
+# ショートカット > 入力ソースの「入力ソースの次のソースを選択」のチェックを外す
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 '<dict><key>enabled</key><false/></dict>'
 
 # ======================
 # トラックパッド
