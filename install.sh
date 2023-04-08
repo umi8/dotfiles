@@ -5,5 +5,6 @@
 ./init/completion.sh
 ./init/vim.sh
 ./init/anyenv.sh
+./init/mac.sh
 
 export PATH=$HOME/dotfiles/bin:$PATH
