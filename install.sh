@@ -1,10 +1,10 @@
 ./init/xcode.sh
-./init/fonts.sh
 ./init/symbolic_link.sh
 ./init/completion.sh
 ./init/vim.sh
 ./init/anyenv.sh
 ./init/mac.sh
+./init/fonts.sh
 #./init/homebrew.sh
 
 export PATH=$HOME/dotfiles/bin:$PATH
