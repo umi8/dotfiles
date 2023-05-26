@@ -6,7 +6,6 @@
 ./init/anyenv.sh
 ./init/mac.sh
 ./init/fonts.sh
-./init/brewfile.sh
 
 export PATH=$HOME/dotfiles/bin:$PATH
 
