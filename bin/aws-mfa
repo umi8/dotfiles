@@ -50,4 +50,5 @@ aws --profile mfa configure set aws_secret_access_key "$(echo "${CREDENTIALS}" |
 aws --profile mfa configure set aws_session_token "$(echo "${CREDENTIALS}" | jq -r .SessionToken)"
 
 echo "export AWS_PROFILE=mfa" | pbcopy
-echo "export AWS_PROFILE=mfa"
+echo "The command 'export AWS_PROFILE=mfa' has been copied to your clipboard."
+echo "Please paste this command in your terminal to start the 'mfa' profile."
