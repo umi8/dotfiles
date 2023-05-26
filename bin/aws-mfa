@@ -15,18 +15,21 @@ usage() {
   exit 1
 }
 
-while getopts :t:p:h OPT
-do
-    case $OPT in
-        t)  SESSION_TOKEN=$OPTARG
-            ;;
-        p)  PROFILE=$OPTARG
-            ;;
-        h)  usage
-            ;;
-        \?) usage
-            ;;
-    esac
+while getopts :t:p:h OPT; do
+  case $OPT in
+  t)
+    SESSION_TOKEN=$OPTARG
+    ;;
+  p)
+    PROFILE=$OPTARG
+    ;;
+  h)
+    usage
+    ;;
+  \?)
+    usage
+    ;;
+  esac
 done
 
 cleanup() {
