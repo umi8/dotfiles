@@ -13,6 +13,6 @@ brew doctor
 # Update Homebrew repository
 brew update --verbose
 # Install packages
-brew bundle --file preferences/homebrew/Brewfile
+brew bundle --file ~/dotfiles/preferences/homebrew/Brewfile
 
 echo "Homebrew installation completed."
