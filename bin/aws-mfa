@@ -37,14 +37,14 @@ cleanup() {
 }
 trap cleanup ERR
 
-ARN_MFA=$(aws sts get-caller-identity --profile=${PROFILE} | jq -r .Arn | sed "s/user/mfa/")
+ARN_MFA=$(aws sts get-caller-identity --profile="${PROFILE}" | jq -r .Arn | sed "s/user/mfa/")
 echo "ARN: ${ARN_MFA}"
 
-CREDENTIALS=$(aws sts get-session-token --profile=${PROFILE} --serial-number ${ARN_MFA} --token-code ${SESSION_TOKEN} | jq ".Credentials")
+CREDENTIALS=$(aws sts get-session-token --profile="${PROFILE}" --serial-number "${ARN_MFA}" --token-code "${SESSION_TOKEN}" | jq ".Credentials")
 
-aws --profile mfa configure set aws_access_key_id $(echo $CREDENTIALS | jq -r .AccessKeyId)
-aws --profile mfa configure set aws_secret_access_key $(echo $CREDENTIALS | jq -r .SecretAccessKey)
-aws --profile mfa configure set aws_session_token $(echo $CREDENTIALS | jq -r .SessionToken)
+aws --profile mfa configure set aws_access_key_id "$(echo "${CREDENTIALS}" | jq -r .AccessKeyId)"
+aws --profile mfa configure set aws_secret_access_key "$(echo "${CREDENTIALS}" | jq -r .SecretAccessKey)"
+aws --profile mfa configure set aws_session_token "$(echo $CREDENTIALS | jq -r .SessionToken)"
 
 echo "export AWS_PROFILE=mfa" | pbcopy
 echo "export AWS_PROFILE=mfa"
