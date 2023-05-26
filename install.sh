@@ -4,8 +4,8 @@
 ./init/vim.sh
 ./init/anyenv.sh
 ./init/mac.sh
-./init/fonts.sh
 #./init/homebrew.sh
+./init/fonts.sh
 
 export PATH=$HOME/dotfiles/bin:$PATH
 
