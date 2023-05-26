@@ -29,6 +29,14 @@ do
     esac
 done
 
+cleanup() {
+  echo "Script failed. Cleaning up..."
+  aws --profile mfa configure set aws_access_key_id ""
+  aws --profile mfa configure set aws_secret_access_key ""
+  aws --profile mfa configure set aws_session_token ""
+}
+trap cleanup ERR
+
 ARN_MFA=$(aws sts get-caller-identity --profile=${PROFILE} | jq -r .Arn | sed "s/user/mfa/")
 echo "ARN: ${ARN_MFA}"
 
