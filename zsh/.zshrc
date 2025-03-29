@@ -15,11 +15,11 @@ for zsh_conf in ${ZSH_CONFS}; do
   source "${ZSH_CONFS_DIR}/${zsh_conf}"
 done
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 ZSH_SECRET_CONF="${HOME}/dotfiles/zsh/.zshrc.secret"
 
 if [ -e "${ZSH_SECRET_CONF}" ]; then
   source "${ZSH_SECRET_CONF}"
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
