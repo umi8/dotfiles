@@ -43,6 +43,8 @@ nnoremap <Leader>f :action GotoFile<CR>
 nnoremap <Leader><Leader>f :action FindInPath<CR>
 " 階層ツールウィンドウを開く
 nnoremap <Leader><Leader>h :action CallHierarchy<CR>
+" Quick Documentation
+nnoremap <Leader>q :action QuickJavaDoc<CR>
 
 " 垂直方向に分割
 nnoremap <Leader>sv :action SplitVertically<CR>
