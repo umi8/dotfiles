@@ -1,54 +1,27 @@
-#!/bin/bash
+#!/bin/bash -eu
 
-set -eu
-export AWS_PROFILE=default
-
-unset AWS_ACCESS_KEY_ID
-unset AWS_SECRET_ACCESS_KEY
-unset AWS_SESSION_TOKEN
-
-SESSION_TOKEN=""
-PROFILE="default"
-
-usage() {
-  echo "Usage: aws-mfa [-t token-code] [-p aws-profile]" 1>&2
+if ! command -v fzf &> /dev/null; then
+  echo "Error: fzf is not installed. Please install fzf to run this script." >&2
   exit 1
-}
+fi
 
-while getopts :t:p:h OPT; do
-  case $OPT in
-  t)
-    SESSION_TOKEN=$OPTARG
-    ;;
-  p)
-    PROFILE=$OPTARG
-    ;;
-  h)
-    usage
-    ;;
-  \?)
-    usage
-    ;;
-  esac
-done
+mfa_profile="${1:-tmp}"
 
-cleanup() {
-  echo "Script failed. Cleaning up..."
-  aws --profile mfa configure set aws_access_key_id ""
-  aws --profile mfa configure set aws_secret_access_key ""
-  aws --profile mfa configure set aws_session_token ""
-}
-trap cleanup ERR
+profile=$(aws configure list-profiles | fzf --prompt="Select AWS Profile: ")
+echo "Selected AWS Profile: ${profile}"
+arn_mfa=$(aws sts get-caller-identity --profile="${profile}" | jq -r .Arn | sed "s/user/mfa/")
 
-ARN_MFA=$(aws sts get-caller-identity --profile="${PROFILE}" | jq -r .Arn | sed "s/user/mfa/")
-echo "ARN: ${ARN_MFA}"
+read -r -p "Please Enter MFA Token Code: " token_code
 
-CREDENTIALS=$(aws sts get-session-token --profile="${PROFILE}" --serial-number "${ARN_MFA}" --token-code "${SESSION_TOKEN}" | jq ".Credentials")
+credentials=$(aws sts get-session-token \
+                --profile="${profile}" \
+                --serial-number "${arn_mfa}" \
+                --token-code "${token_code}")
 
-aws --profile mfa configure set aws_access_key_id "$(echo "${CREDENTIALS}" | jq -r .AccessKeyId)"
-aws --profile mfa configure set aws_secret_access_key "$(echo "${CREDENTIALS}" | jq -r .SecretAccessKey)"
-aws --profile mfa configure set aws_session_token "$(echo "${CREDENTIALS}" | jq -r .SessionToken)"
+aws --profile "${mfa_profile}" configure set region "ap-northeast-1"
+aws --profile "${mfa_profile}" configure set aws_access_key_id "$(echo "${credentials}" | jq -r .Credentials.AccessKeyId)"
+aws --profile "${mfa_profile}" configure set aws_secret_access_key "$(echo "${credentials}" | jq -r .Credentials.SecretAccessKey)"
+aws --profile "${mfa_profile}" configure set aws_session_token "$(echo "${credentials}" | jq -r .Credentials.SessionToken)"
 
-echo "export AWS_PROFILE=mfa" | pbcopy
-echo "The command 'export AWS_PROFILE=mfa' has been copied to your clipboard."
-echo "Please paste this command in your terminal to start the 'mfa' profile."
+echo "Setup completed successfully."
+echo "You can now use the '${mfa_profile}' profile."
