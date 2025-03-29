@@ -2,6 +2,7 @@
 preferences/homebrew/Brewfile.lock.json
 preferences/mac/*.txt
 .idea
+.DS_Store
 
 # Local machine only configuration
 zsh/.zshrc.secret
