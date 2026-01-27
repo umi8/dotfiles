@@ -1,6 +1,3 @@
-# Path to Intellij IDEA Command-line
-export PATH=/usr/local/bin/idea:$PATH
-
 # Path to Go bin
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
@@ -8,12 +5,9 @@ export PATH=$GOPATH/bin:$PATH
 # Path to nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-# Path to Glassfish
-export GLASSFISH_HOME=/usr/local/opt/glassfish/libexec
-
 export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="$HOME/dotfiles/bin/.secret:$PATH"
-export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
