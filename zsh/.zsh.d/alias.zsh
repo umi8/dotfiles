@@ -3,6 +3,11 @@ alias vz='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 alias ..='cd ..'
+
+# zoxide
+alias cd='z'
+alias cdi='zi'
+
 alias ls='lsd'
 alias ll='ls -ltra'
 alias cat='bat'
