@@ -1,6 +1,5 @@
 ./init/xcode.sh
 ./init/homebrew.sh
-./init/symbolic_link.sh
 ./init/completion.sh
 ./init/vim.sh
 ./init/anyenv.sh
