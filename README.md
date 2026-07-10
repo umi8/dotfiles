@@ -32,7 +32,4 @@ chezmoi init --apply https://github.com/umi8/dotfiles.git
 
 ### 3. OSセットアップ（Homebrew・Xcode Command Line Tools・フォント等）
 
-```sh
-cd ~/.local/share/chezmoi && \
-source install.sh
-```
+`install.sh` および `init/` 配下のスクリプトは、リポジトリが `~/dotfiles` に配置されている前提のままになっており、本chezmoi移行（クローン先が `~/.local/share/chezmoi` に変更）に未対応。現時点では実行しても失敗する。対応は別PRで行う予定。
