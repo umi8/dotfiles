@@ -2,8 +2,6 @@
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
 
-export PATH="$HOME/dotfiles/bin:$PATH"
-export PATH="$HOME/dotfiles/bin/.secret:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
