@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-ZSH_CONFS_DIR="${HOME}/dotfiles/zsh/.zsh.d"
+ZSH_CONFS_DIR="${HOME}/.zsh.d"
 ZSH_PRIORITIES_CONF="${ZSH_CONFS_DIR}/priorities.conf"
 
 # Load ${ZSH_CONFS} in ${ZSH_PRIORITIES_CONF}
@@ -18,7 +18,7 @@ done
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-ZSH_SECRET_CONF="${HOME}/dotfiles/zsh/.zshrc.secret"
+ZSH_SECRET_CONF="${HOME}/.zshrc.secret"
 
 if [ -e "${ZSH_SECRET_CONF}" ]; then
   source "${ZSH_SECRET_CONF}"

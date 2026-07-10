@@ -2,9 +2,9 @@
 " .vimrcの設定の読み込み
 " ===========================================
 " 基本設定
-source ~/dotfiles/.vim/config/init/basic.vim
+source ~/.vim/config/init/basic.vim
 " マッピング設定
-source ~/dotfiles/.vim/config/init/mapping.vim
+source ~/.vim/config/init/mapping.vim
 
 " ===========================================
 " IntelliJ IDEAのアクションの設定

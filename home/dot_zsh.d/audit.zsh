@@ -1,4 +1,4 @@
-ZSH_D_DIR="${HOME}/dotfiles/zsh/.zsh.d"
+ZSH_D_DIR="${HOME}/.zsh.d"
 
 zsh_d_list=($(find "${ZSH_D_DIR}/"*.zsh -type f | awk -F '/' '{ print $NF }' | sort))
 source "${ZSH_D_DIR}/priorities.conf"
