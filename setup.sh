@@ -1,13 +1,12 @@
 #!/bin/bash -eu
+set -eu
 
-xcode_select_installed=$(xcode-select -p 2>/dev/null)
-
-if [ -z "$xcode_select_installed" ]; then
+if xcode_select_installed=$(xcode-select -p 2>/dev/null); then
+  echo "Command Line Tools for Xcode are already installed."
+else
   echo "Installing Command Line Tools for Xcode..."
   xcode-select --install
   echo "Command Line Tools for Xcode installation completed."
-else
-  echo "Command Line Tools for Xcode are already installed."
 fi
 
 if command -v brew >/dev/null 2>&1; then
@@ -23,7 +22,7 @@ else
     exit 1
   fi
 
-  brew doctor
+  brew doctor || true
   brew update --verbose
 fi
 
