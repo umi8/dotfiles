@@ -7,3 +7,6 @@ preferences/mac/*.txt
 # Local machine only configuration
 zsh/.zshrc.secret
 bin/.secret
+
+# Claude Code superpowers skill artifacts (specs/plans, not project content)
+docs/superpowers/
