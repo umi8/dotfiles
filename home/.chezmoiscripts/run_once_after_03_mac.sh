@@ -1,3 +1,3 @@
 #!/bin/bash -eu
 
-bash "$(chezmoi source-path)/../preferences/mac/mac_setup.sh"
+bash "$CHEZMOI_SOURCE_DIR/../preferences/mac/mac_setup.sh"
