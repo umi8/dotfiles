@@ -12,14 +12,13 @@
 
 ## Installation
 
-### 1. dotfilesの適用（chezmoi）
+### 1. セットアップ（Xcode Command Line Tools・Homebrew・chezmoi・dotfilesの適用）
 
 ```sh
-brew install chezmoi
-chezmoi init --apply https://github.com/umi8/dotfiles.git
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/umi8/dotfiles/master/setup.sh)"
 ```
 
-これにより、このリポジトリは chezmoi の標準ソースディレクトリ `~/.local/share/chezmoi` に配置され、`home/` 配下の設定ファイルが対応するホームディレクトリ上のパスに適用される。
+これにより、Xcode Command Line Tools・Homebrew・chezmoi がインストールされ、このリポジトリが chezmoi の標準ソースディレクトリ `~/.local/share/chezmoi` に配置され、`home/` 配下の設定ファイルが対応するホームディレクトリ上のパスに適用される。続けて zsh補完のパーミッション調整・vim-plugの導入・mac defaultsの適用・Powerlineフォントの導入が自動的に行われる。
 
 ### 2. マシン固有の機密ファイルを配置する（chezmoi管理対象外）
 
@@ -29,7 +28,3 @@ chezmoi init --apply https://github.com/umi8/dotfiles.git
 - `~/.local/bin/`: `aws-mfa` 以外の個人用スクリプト（旧 `bin/.secret/` 配下のスクリプト）
 
 以前 `~/dotfiles` を使っていた環境から移行する場合は、`~/dotfiles/zsh/.zshrc.secret` を `~/.zshrc.secret` に、`~/dotfiles/bin/.secret/` 配下のスクリプトを `~/.local/bin/` に、それぞれ手動でコピーすること。
-
-### 3. OSセットアップ（Homebrew・Xcode Command Line Tools・フォント等）
-
-`install.sh` および `init/` 配下のスクリプトは、リポジトリが `~/dotfiles` に配置されている前提のままになっており、本chezmoi移行（クローン先が `~/.local/share/chezmoi` に変更）に未対応。現時点では実行しても失敗する。対応は別PRで行う予定。

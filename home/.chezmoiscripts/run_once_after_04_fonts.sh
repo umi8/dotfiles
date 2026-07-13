@@ -1,8 +1,8 @@
 #!/bin/bash -eu
 
 if ! command -v fc-list >/dev/null 2>&1; then
-  echo "fc-list is not installed. Please install it first."
-  exit 1
+  echo "fc-list is not installed. Skipping Powerline fonts installation."
+  exit 0
 fi
 
 if fc-list | grep -i powerline >/dev/null; then
@@ -20,5 +20,3 @@ cd fonts || exit 1
 echo "Cleaning..."
 cd .. || exit 1
 rm -rf fonts
-
-echo "Powerline Fonts installation completed."
